@@ -26,26 +26,26 @@ const Timer = ({hoursMinSecs}) => {
     };
 
     var incDecr= (event) => {
-        if(event == "inc") {
-            if (state == "hour")
+        if(event === "inc") {
+            if (state === "hour")
                 setTime([hrs+1, mins, secs])
-                if(hrs ==24) setTime([0, mins, secs])
-            else if (state =="minute") {
+                if(hrs === 24) setTime([0, mins, secs])
+            else if (state ==="minute") {
                 setTime([hrs, mins+1, secs])
-                if(mins==59) setTime([hrs+1, 0, secs])
-            } else if(state == "second") {
+                if(mins === 59) setTime([hrs+1, 0, secs])
+            } else if(state === "second") {
                 setTime([hrs, mins, secs+1])
-                if(secs==59) setTime([hrs, mins+1, 0])
+                if(secs === 59) setTime([hrs, mins+1, 0])
             }
-        } else if (event == "decr") {
-            if (state == "hour" && hrs != 0)
+        } else if (event === "decr") {
+            if (state === "hour" && hrs != 0)
                 setTime([hrs-1, mins, secs])
-            else if (state =="minute") {
+            else if (state ==="minute") {
                 setTime([hrs, mins-1, secs])
-                if (mins == 0) setTime([hrs-1, 59, secs])
-            } else if(state == "second") {
+                if (mins === 0) setTime([hrs-1, 59, secs])
+            } else if(state === "second") {
                 setTime([hrs, mins, secs-1])
-                if (secs == 0) setTime([hrs, mins-1, 59])
+                if (secs === 0) setTime([hrs, mins-1, 59])
             }
         }
     }
