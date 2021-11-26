@@ -1,18 +1,27 @@
 import React from 'react';
+import Header from './components/Header/Header'
 import Timer from './components/Timer';
 import CoinMeter from './components/CoinMeter';
-import './'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 function App() {
 
-  var hoursMinSecs = {hours:2, minutes: 20, seconds: 40}
+  var hoursMinSecs = {hours:10, minutes: 0, seconds: 0}
 
   return (
-    <div>
-      <CoinMeter/>
-      {/* <Timer hoursMinSecs={hoursMinSecs}/> */}
-    </div>
+    <Router>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<CoinMeter/>}/>
+        <Route path="/timer" element={<Timer hoursMinSecs={hoursMinSecs}/>}/>
+      </Routes>
+    </Router>
   );
 }
 

@@ -38,7 +38,7 @@ const Timer = ({hoursMinSecs}) => {
                 if(secs === 59) setTime([hrs, mins+1, 0])
             }
         } else if (event === "decr") {
-            if (state === "hour" && hrs != 0)
+            if (state === "hour" && hrs !== 0)
                 setTime([hrs-1, mins, secs])
             else if (state ==="minute") {
                 setTime([hrs, mins-1, secs])

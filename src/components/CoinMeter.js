@@ -7,9 +7,13 @@ function CoinMeter() {
   var [respData, setRespData] = useState("");
 
   useEffect(() => {
-    const req = setInterval(async () => await coinReq(), 1000);
+    const req = setInterval(async () => await coinReq(), 3000);
     return () => clearInterval(req);
   });
+
+  useEffect(() => {
+    console.log("test")
+  }, [])
 
   var config = {
     method: 'get',
@@ -36,7 +40,8 @@ function CoinMeter() {
       "eur": respData.bpi.EUR.rate
     } : ""
   } catch (error) {
-    console.log(error.message)
+      console.log(error)
+      alert(error.message)
   }
 
 

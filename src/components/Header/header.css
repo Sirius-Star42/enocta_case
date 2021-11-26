@@ -1,0 +1,25 @@
+.appbar {
+    background-color: black;
+    display: flex;
+    color: white;
+    justify-content: start; 
+    align-items: center;   
+    padding-left: 1vw;
+}
+.links {
+    width: 10%;
+    margin-left: 1vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.linkfont {
+    color: white;
+    text-decoration: none;
+    
+}
+
+a:hover {
+    text-decoration: none;
+    color: gray;
+}
